@@ -37,6 +37,9 @@ class TaskListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+             let task = TaskController.shared.tasks[indexPath.row]
+                TaskController.shared.remove(task: task)
+            
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

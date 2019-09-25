@@ -17,6 +17,7 @@
 		1BAA1B8B233C067F002C6507 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B8A233C067F002C6507 /* CoreDataStack.swift */; };
 		1BAA1B8D233C085B002C6507 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B8C233C085B002C6507 /* Task+Convenience.swift */; };
 		1BAA1B8F233C093B002C6507 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B8E233C093B002C6507 /* TaskController.swift */; };
+		1BAA1B91233C145E002C6507 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B90233C145E002C6507 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1BAA1B8A233C067F002C6507 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1BAA1B8C233C085B002C6507 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		1BAA1B8E233C093B002C6507 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		1BAA1B90233C145E002C6507 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		1BAA1B6B233C03D5002C6507 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				1BAA1B90233C145E002C6507 /* DateHelper.swift */,
 				1BAA1B85233C05CF002C6507 /* TableViewController */,
 				1BAA1B84233C05C6002C6507 /* Model Controller */,
 				1BAA1B83233C05B7002C6507 /* Model */,
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BAA1B8F233C093B002C6507 /* TaskController.swift in Sources */,
+				1BAA1B91233C145E002C6507 /* DateHelper.swift in Sources */,
 				1BAA1B8B233C067F002C6507 /* CoreDataStack.swift in Sources */,
 				1BAA1B87233C0600002C6507 /* TaskListTableViewController.swift in Sources */,
 				1BAA1B8D233C085B002C6507 /* Task+Convenience.swift in Sources */,
