@@ -24,15 +24,20 @@ class TaskController {
     }
     
     func add(taskWithName name: String, notes: String?, due: Date?) {
-        
+        _ = Task(name: name, notes: notes, due: due)
+        saveToPersistentStore()
     }
     
     func update(task: Task, name: String, notes: String?, due: Date?){
-        
+        task.name = name
+        task.notes = notes
+        task.due = due
+        saveToPersistentStore()
     }
     
     func remove(task: Task){
-        
+        CoreDataStack.mainContext.delete(task)
+        saveToPersistentStore()
     }
     
     func saveToPersistentStore(){
