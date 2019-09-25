@@ -176,6 +176,11 @@
                         <action selector="datePickerValueChanged:" destination="oFn-fv-gp9" eventType="valueChanged" id="K6v-kQ-sfV"/>
                     </connections>
                 </datePicker>
+                <tapGestureRecognizer id="JnI-wA-qnz">
+                    <connections>
+                        <action selector="userTappedView:" destination="oFn-fv-gp9" id="D0u-Tc-wh4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1431.8840579710145" y="9.375"/>
         </scene>

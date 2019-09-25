@@ -25,6 +25,12 @@ class TaskDetailTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    @IBAction func userTappedView(_ sender: UITapGestureRecognizer) {
+        nameTextField.resignFirstResponder()
+        dueDateTextField.resignFirstResponder()
+        notesTextView.resignFirstResponder()
+    }
+    
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         dueDateTextField.text = dueDatePicker.date.stringValue()
     }
