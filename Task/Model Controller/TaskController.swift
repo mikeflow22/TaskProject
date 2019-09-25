@@ -40,6 +40,11 @@ class TaskController {
         saveToPersistentStore()
     }
     
+    func toggleIsCompleteFor(task: Task){
+        task.isComplete = !task.isComplete
+        saveToPersistentStore()
+    }
+    
     func saveToPersistentStore(){
         
         do {

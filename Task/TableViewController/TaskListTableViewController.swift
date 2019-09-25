@@ -31,7 +31,7 @@ class TaskListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! ButtonTableViewCell
         let task = TaskController.shared.tasks[indexPath.row]
         cell.update(withTask: task)
-        
+        cell.delegate = self
         // Configure the cell...
         return cell
     }
@@ -60,5 +60,16 @@ class TaskListTableViewController: UITableViewController {
         }
     }
     
+}
 
+extension TaskListTableViewController: ButtonTableViewCellDelegate  {
+    
+    func buttonCellButtonTapped(_ sender: ButtonTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        let taskToToggle = TaskController.shared.tasks[indexPath.row]
+        TaskController.shared.toggleIsCompleteFor(task: taskToToggle)
+        tableView.reloadData()
+    }
+    
+    
 }

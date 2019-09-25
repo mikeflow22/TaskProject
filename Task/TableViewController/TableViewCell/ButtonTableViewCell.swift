@@ -8,15 +8,19 @@
 
 import UIKit
 
+protocol ButtonTableViewCellDelegate: class {
+    func buttonCellButtonTapped(_ sender: ButtonTableViewCell)
+}
 class ButtonTableViewCell: UITableViewCell {
 
     var task: Task?
+    weak var delegate: ButtonTableViewCellDelegate?
     
     @IBOutlet weak var primarylabel: UILabel!
     @IBOutlet weak var completeButtonProperties: UIButton!
 
     @IBAction func buttonTapped(_ sender: UIButton) {
-        
+        delegate?.buttonCellButtonTapped(self)
     }
     
     func updateButton(_ isComplete: Bool){
