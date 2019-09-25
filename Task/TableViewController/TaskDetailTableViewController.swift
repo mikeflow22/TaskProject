@@ -10,7 +10,12 @@ import UIKit
 
 class TaskDetailTableViewController: UITableViewController {
 
-    var task: Task?
+    var task: Task? {
+        didSet {
+            print("Task in the detail set")
+            updateViews()
+        }
+    }
     var dueDate: Date?
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -52,7 +57,7 @@ class TaskDetailTableViewController: UITableViewController {
     }
     
     private func updateViews(){
-    guard let passedInTask = task else {
+    guard let passedInTask = task, isViewLoaded else {
         self.title = "Please Enter Task Details"
         return }
         self.title =  passedInTask.name

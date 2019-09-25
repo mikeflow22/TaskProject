@@ -18,6 +18,7 @@
 		1BAA1B8D233C085B002C6507 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B8C233C085B002C6507 /* Task+Convenience.swift */; };
 		1BAA1B8F233C093B002C6507 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B8E233C093B002C6507 /* TaskController.swift */; };
 		1BAA1B91233C145E002C6507 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B90233C145E002C6507 /* DateHelper.swift */; };
+		1BAA1B93233C1B81002C6507 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA1B92233C1B81002C6507 /* ButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1BAA1B8C233C085B002C6507 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		1BAA1B8E233C093B002C6507 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		1BAA1B90233C145E002C6507 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		1BAA1B92233C1B81002C6507 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +120,17 @@
 			children = (
 				1BAA1B86233C0600002C6507 /* TaskListTableViewController.swift */,
 				1BAA1B88233C060B002C6507 /* TaskDetailTableViewController.swift */,
+				1BAA1B94233C1B85002C6507 /* TableViewCell */,
 			);
 			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		1BAA1B94233C1B85002C6507 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BAA1B92233C1B81002C6507 /* ButtonTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAA1B93233C1B81002C6507 /* ButtonTableViewCell.swift in Sources */,
 				1BAA1B8F233C093B002C6507 /* TaskController.swift in Sources */,
 				1BAA1B91233C145E002C6507 /* DateHelper.swift in Sources */,
 				1BAA1B8B233C067F002C6507 /* CoreDataStack.swift in Sources */,
