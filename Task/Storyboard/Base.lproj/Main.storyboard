@@ -18,14 +18,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="c9E-H7-2A9">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="64" id="c9E-H7-2A9" customClass="ButtonTableViewCell" customModule="Task" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c9E-H7-2A9" id="juS-Q6-B9M">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pXp-4b-d94">
+                                            <rect key="frame" x="26" y="17" width="362" height="30"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbN-73-vgq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8z-NW-msc">
+                                                    <rect key="frame" x="332" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="X8z-NW-msc" secondAttribute="height" multiplier="1:1" id="4S0-bi-EV1"/>
+                                                    </constraints>
+                                                    <state key="normal" image="incompleteCheckmark"/>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="c9E-H7-2A9" eventType="touchUpInside" id="sjb-LD-CSC"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pXp-4b-d94" firstAttribute="leading" secondItem="juS-Q6-B9M" secondAttribute="leadingMargin" constant="6" id="apV-JH-HG5"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pXp-4b-d94" secondAttribute="trailing" constant="6" id="oxk-qd-bUk"/>
+                                        <constraint firstItem="pXp-4b-d94" firstAttribute="top" secondItem="juS-Q6-B9M" secondAttribute="topMargin" constant="6" id="qBX-no-BeK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pXp-4b-d94" secondAttribute="bottom" constant="6" id="yPf-b3-g6k"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completeButtonProperties" destination="X8z-NW-msc" id="5KJ-cx-EXc"/>
+                                    <outlet property="primarylabel" destination="nbN-73-vgq" id="l1B-dM-nhO"/>
                                     <segue destination="oFn-fv-gp9" kind="show" identifier="cellSegue" id="qhc-xu-Nev"/>
                                 </connections>
                             </tableViewCell>
@@ -45,7 +76,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOl-as-N4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="11"/>
+            <point key="canvasLocation" x="673.91304347826087" y="10.714285714285714"/>
         </scene>
         <!--Title-->
         <scene sceneID="H5W-Ox-4MW">
@@ -201,6 +232,9 @@
             <point key="canvasLocation" x="-25" y="11"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="incompleteCheckmark" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qhc-xu-Nev"/>
     </inferredMetricsTieBreakers>
