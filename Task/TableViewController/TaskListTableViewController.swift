@@ -30,6 +30,7 @@ class TaskListTableViewController: UITableViewController {
         //Call the ButtonTableViewCell's function upate(withTask: Task) instead of setting the text label directly (here). You will  have to cast your cell to be a buttonTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! ButtonTableViewCell
         let task = TaskController.shared.tasks[indexPath.row]
+        print("\(task.isComplete)")
         cell.update(withTask: task)
         cell.delegate = self
         // Configure the cell...

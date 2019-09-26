@@ -12,16 +12,35 @@ import CoreData
 class TaskController {
     static let shared = TaskController()
     
-    var tasks: [Task] = []
-    
+//    var tasks: [Task] = []
+    let fetchedResultsController: NSFetchedResultsController<Task>
     init(){
-       tasks = fetchTasks()
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "isComplete", ascending: false), NSSortDescriptor(key: "due", ascending: true)]
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.mainContext, sectionNameKeyPath: "isComplete", cacheName: nil)
+        do {
+            try frc.performFetch()
+        } catch  {
+            print("Error fetching  takss: \(error)")
+        }
+        fetchedResultsController  = frc
     }
     
     //MARK: - MOCK DATA
-    var mocTasks: [Task]{
-        return [Task(name: "first"), Task(name: "second", notes: "Second", due: Date(), isComplete: false), Task(name: "Third", notes: "third", due: nil, isComplete: true)]
-    }
+//    var mocTasks: [Task]{
+//        let fourthTask = Task(name: "Fourth")
+//        fourthTask.isComplete = true
+//        fourthTask.due = Date()
+//
+//        let first = Task(name: "first")
+//        let second = Task(name: "second", notes: "Second", due: Date(), isComplete: false)
+//        second.due = Date()
+//        let thrid = Task(name: "Third", notes: "third", due: nil, isComplete: true)
+//        thrid.isComplete = true
+//
+//
+//        return [first, second, thrid, fourthTask]
+//    }
     
     func add(taskWithName name: String, notes: String?, due: Date?) {
         _ = Task(name: name, notes: notes, due: due)
@@ -54,7 +73,7 @@ class TaskController {
         }
     }
     
-    func fetchTasks() -> [Task]  {
+//    func fetchTasks() -> [Task]  {
 //        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
 //
 //        do {
@@ -64,6 +83,6 @@ class TaskController {
 //            print("Error fetching Tasks: \(error) \(#function)")
 //        }
 //        return []
-        return mocTasks
-    }
+//        return mocTasks
+//    }
 }

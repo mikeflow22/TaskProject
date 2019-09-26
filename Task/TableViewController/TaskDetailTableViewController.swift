@@ -63,6 +63,7 @@ class TaskDetailTableViewController: UITableViewController {
         self.title =  passedInTask.name
         nameTextField.text = passedInTask.name
         dueDateTextField.text = passedInTask.due?.stringValue()
+        print("\(passedInTask.due?.stringValue())")
         notesTextView.text = passedInTask.notes
     
     }

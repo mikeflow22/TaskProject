@@ -20,13 +20,15 @@ class ButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var completeButtonProperties: UIButton!
 
     @IBAction func buttonTapped(_ sender: UIButton) {
+        print("button clicked")
         delegate?.buttonCellButtonTapped(self)
     }
     
     func updateButton(_ isComplete: Bool){
-        guard let passedInTask = task else { return }
-        let imageName = passedInTask.isComplete ? "doneCheckMark" : "incompleteCheckMark"
+        let imageName = isComplete ? "doneCheckMark" : "incompleteCheckmark"
         completeButtonProperties.setImage(UIImage(named: imageName), for: .normal)
+        print("update button should change")
+        print("\(imageName)")
     }
 }
 
@@ -34,6 +36,7 @@ extension ButtonTableViewCell {
     func update(withTask task: Task){
        primarylabel.text = task.name
         self.updateButton(task.isComplete)
+        print("update with task was hit")
 
     }
 }
