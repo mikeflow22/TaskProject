@@ -45,12 +45,17 @@ class TaskDetailTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        guard let name = nameTextField.text, !name.isEmpty, let due = dueDateTextField.text, !due.isEmpty, let notes = notesTextView.text, !notes.isEmpty else  { return }
+        guard let name = nameTextField.text, !name.isEmpty,
+            let due = dueDateTextField.text, !due.isEmpty,
+            let notes = notesTextView.text, !notes.isEmpty else  { return }
+        
         if let passedInTask = task  {
             //update
+            print("updated")
             TaskController.shared.update(task: passedInTask, name: name, notes: notes, due: due.dateValue())
         } else {
             //add task
+            print("Added")
             TaskController.shared.add(taskWithName: name, notes: notes, due: due.dateValue())
         }
         navigationController?.popToRootViewController(animated: true)
@@ -63,6 +68,8 @@ class TaskDetailTableViewController: UITableViewController {
         self.title =  passedInTask.name
         nameTextField.text = passedInTask.name
         dueDateTextField.text = passedInTask.due?.stringValue()
+        guard let date = passedInTask.due else { return }
+        dueDatePicker.date = date
         print("\(passedInTask.due?.stringValue())")
         notesTextView.text = passedInTask.notes
     
